@@ -7,6 +7,7 @@ const PUBLIC_KEY = process.env.MARVEL_KEY;
 const PRIVATE_KEY = process.env.ANOTHER_MARVEL_KEY;
 // const API_KEY = PRIVATE_KEY + PUBLIC_KEY;
 const charURL = "/v1/public/characters?";
+
 const TS = new Date().getTime();
 
 console.log(TS);
@@ -17,13 +18,11 @@ var hash = md5(stringToHash);
 
 var data = "wolverine";
 
-
 axios
-  .get(URL + PORT + charURL + 'ts=' + TS +'&apikey=' + PUBLIC_KEY + '&hash=' + hash )
+  .get(URL + PORT + charURL + 'ts=' + TS +'&apikey=' + PUBLIC_KEY + '&hash=' + hash + '&name=' + data)
   .then(response => {
     console.log(response);
   })
   .catch(error => {
     console.log(error);
   });
-

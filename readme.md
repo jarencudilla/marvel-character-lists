@@ -12,7 +12,7 @@ Couple of things to ponder:
          - [] * by classification  
 - [] 3. I need to make a search feature that would accept all those variables I mentioned above.
 
-References/Resources :
-https://www.mariokandut.com/how-to-make-an-API-request-in-Node-javascript/
-https://developer.marvel.com/docs#!/public/getCreatorCollection_get_0
-https://nodejs.dev/learn/making-http-requests-with-nodejs
+References/Resources :  
+https://www.mariokandut.com/how-to-make-an-API-request-in-Node-javascript/  
+https://developer.marvel.com/docs#!/public/getCreatorCollection_get_0  
+https://nodejs.dev/learn/making-http-requests-with-nodejs  

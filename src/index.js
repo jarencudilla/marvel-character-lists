@@ -5,8 +5,9 @@ const URL =  "https://gateway.marvel.com:";
 const PORT = process.env.PORT || 443
 const PUBLIC_KEY = process.env.MARVEL_KEY;
 const PRIVATE_KEY = process.env.ANOTHER_MARVEL_KEY;
-const SH_API_TOKEN = process.env.SH_API_TOKEN
 
+
+const SH_API_TOKEN = process.env.SH_API_TOKEN
 const SH_URL=`https://superheroapi.com/api/${SH_API_TOKEN}`
 
 

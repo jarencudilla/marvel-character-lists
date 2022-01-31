@@ -5,28 +5,30 @@ const URL =  "https://gateway.marvel.com:";
 const PORT = process.env.PORT || 443
 const PUBLIC_KEY = process.env.MARVEL_KEY;
 const PRIVATE_KEY = process.env.ANOTHER_MARVEL_KEY;
-
-
-const SH_API_TOKEN = process.env.SH_API_TOKEN
-const SH_URL=`https://superheroapi.com/api/${SH_API_TOKEN}`
-
-
+const SH_API_TOKEN = process.env.SH_API_TOKEN;
+const SH_URL=`https://superheroapi.com/api/${SH_API_TOKEN}`;
 const charURL = "/v1/public/characters?";
-
 const TS = new Date().getTime();
 
-console.log(TS);
-console.log(PUBLIC_KEY);
+const rl = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+// console.log(TS);
+// console.log(PUBLIC_KEY);
 
 var stringToHash = TS + PRIVATE_KEY + PUBLIC_KEY;
 var hash = md5(stringToHash);
-var data = "wolverine";
 
-
-
+rl.question('Enter a Marvel Character:',  char => {
+  console.log(`searching entries for ${char}`)
+  rl.close()
+})
 
 axios
-  .get(URL + PORT + charURL + 'ts=' + TS +'&apikey=' + PUBLIC_KEY + '&hash=' + hash + '&name=' + data)
+  // .get(URL + PORT + charURL + 'ts=' + TS +'&apikey=' + PUBLIC_KEY + '&hash=' + hash + '&name=' + char)
+  .get(SH_URL + char)
   .then(response => {
     console.log(response);
   })
